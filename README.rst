@@ -3,6 +3,7 @@ sklearn-deltatfidf
 =================
 
 DeltaTfidfVectorizer for scikit-learn.
+
 The Delta TFIDF is suggested in a article_ by Justin Martineau and Tim Finin, and usually associated with sentiment classification or polarity detection of text.
 
 Usage
