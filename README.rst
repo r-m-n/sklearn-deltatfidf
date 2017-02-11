@@ -16,7 +16,7 @@ Usage
   v = DeltaTfidfVectorizer()
   data = ['word1 word2', 'word2', 'word2 word3', 'word4']
   labels = [1, -1, -1, 1]
-  v.fit_transform(corpus, labels)
+  v.fit_transform(data, labels)
 
   # >> v.idf_
   # >> array([ 1.69314718,  0.59453489,  0.30685282,  1.69314718])
