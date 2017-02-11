@@ -90,18 +90,12 @@ class DeltaTfidfVectorizer(TfidfVectorizer):
                     feature_idx = vocabulary[feature]
                     if feature_idx not in feature_counter:
                         feature_counter[feature_idx] = 1
-                        if y[i] == 1:
-                            pos_feature_counter[feature_idx] = 1
-                            neg_feature_counter[feature_idx] = 0
-                        elif y[i] == -1:
-                            pos_feature_counter[feature_idx] = 0
-                            neg_feature_counter[feature_idx] = 1
+                        pos_feature_counter[feature_idx] = int(y[i] == 1)
+                        neg_feature_counter[feature_idx] = int(y[i] == -1)
                     else:
                         feature_counter[feature_idx] += 1
-                        if y[i] == 1:
-                            pos_feature_counter[feature_idx] += 1
-                        elif y[i] == -1:
-                            neg_feature_counter[feature_idx] += 1
+                        pos_feature_counter[feature_idx] += int(y[i] == 1)
+                        neg_feature_counter[feature_idx] += int(y[i] == -1)
                 except KeyError:
                     # Ignore out-of-vocabulary items for fixed_vocab=True
                     continue
