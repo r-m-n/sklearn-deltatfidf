@@ -32,7 +32,7 @@ class DeltaTfidfTransformer(TfidfTransformer):
 
             # log+1 instead of log makes sure terms with zero idf don't get
             # suppressed entirely.
-            idf = np.log(float(n_neg_samples) / df_neg) - np.log(float(n_pos_samples) / df_pos) + 1.0
+            idf = np.log(float(n_pos_samples) / df_pos) - np.log(float(n_neg_samples) / df_neg) + 1.0
             self._idf_diag = sp.spdiags(idf, diags=0, m=n_features,
                                         n=n_features, format='csr')
 
