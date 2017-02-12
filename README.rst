@@ -18,9 +18,6 @@ Usage
   labels = [1, -1, -1, 1]
   v.fit_transform(data, labels)
 
-  # >> v.idf_
-  # >> array([ 1.69314718,  0.59453489,  0.30685282,  1.69314718])
-
   # you can use it in pipelines as usual
   pipe = Pipeline([
         ('vectorizer', DeltaTfidfVectorizer()),
