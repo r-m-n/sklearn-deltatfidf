@@ -6,7 +6,6 @@ import numpy as np
 import scipy.sparse as sp
 from sklearn.feature_extraction.text import TfidfVectorizer, TfidfTransformer, \
     _make_int_array, _document_frequency
-from sklearn.utils.fixes import frombuffer_empty
 
 
 class DeltaTfidfTransformer(TfidfTransformer):
@@ -110,9 +109,9 @@ class DeltaTfidfVectorizer(TfidfVectorizer):
 
         j_indices = np.asarray(j_indices, dtype=np.intc)
         indptr = np.frombuffer(indptr, dtype=np.intc)
-        values = frombuffer_empty(values, dtype=np.intc)
-        pos_values = frombuffer_empty(pos_values, dtype=np.intc)
-        neg_values = frombuffer_empty(neg_values, dtype=np.intc)
+        values = np.frombuffer(values, dtype=np.intc)
+        pos_values = np.frombuffer(pos_values, dtype=np.intc)
+        neg_values = np.frombuffer(neg_values, dtype=np.intc)
 
         X = sp.csr_matrix((values, j_indices, indptr),
                           shape=(len(indptr) - 1, len(vocabulary)),
