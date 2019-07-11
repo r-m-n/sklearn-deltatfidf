@@ -240,4 +240,4 @@ class DeltaTfidfVectorizer(TfidfVectorizer):
         _, X = self._count_vocab(raw_documents, fixed_vocab=True)
         if self.binary:
             X.data.fill(1)
-        return X
+        return self._tfidf.transform(X, copy=False)
