@@ -1,3 +1,4 @@
 sklearn_deltatfidf.egg-info/
 dist/
 *.pyc
+.vscode
