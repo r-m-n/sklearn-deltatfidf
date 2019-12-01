@@ -2,6 +2,8 @@
 sklearn-deltatfidf
 =================
 
+|pypi| |downloads|
+
 DeltaTfidfVectorizer for scikit-learn.
 
 The Delta TFIDF is suggested in a article_ by Justin Martineau and Tim Finin, and usually associated with sentiment classification or polarity detection of text.
@@ -43,3 +45,9 @@ From source:
     $ python setup.py install
 
 .. _article: http://ebiquity.umbc.edu/_file_directory_/papers/446.pdf
+
+.. |pypi| image:: https://img.shields.io/pypi/v/sklearn-deltatfidf
+    :alt: PyPI
+
+.. |downloads| image:: https://img.shields.io/pypi/dm/sklearn-deltatfidf
+    :alt: PyPI - Downloads
